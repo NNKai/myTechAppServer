@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const data = require('./data/data.json');
 var cors = require('cors')
+require('dotenv').config()
+const port = process.env.PORT
 
 app.use(cors())
 
@@ -14,7 +16,7 @@ app.get('/', (req, res) => {
 });
 // END OF NEW CODE
 
-app.listen(8080, () => {
-    console.log('Server Started on http://localhost:8080');
+app.listen(port, () => {
+    console.log('Server Started on', port);
     console.log('Press CTRL + C to stop server');
 });
